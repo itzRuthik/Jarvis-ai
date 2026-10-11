@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>JARVIS AI — Ultimate Personal AI Assistant | At Your Service. Always.</title>
+<meta name="description" content="JARVIS AI is a futuristic personal AI assistant with a holographic HUD, voice interaction, web search, smart memory, offline core, PWA install and an Android APK." />
+<meta name="theme-color" content="#03070f" />
+<link rel="canonical" href="https://itzruthik.github.io/Jarvis-ai/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JARVIS AI — Ultimate Personal AI Assistant" />
+<meta property="og:description" content="Holographic HUD, voice interaction, web search, smart memory and an offline core. Install as a PWA or download the Android APK." />
+<meta property="og:image" content="https://itzruthik.github.io/Jarvis-ai/assets/og-image.png" />
+<meta property="og:url" content="https://itzruthik.github.io/Jarvis-ai/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JARVIS AI — Ultimate Personal AI Assistant" />
+<meta name="twitter:description" content="A cinematic AI assistant: holographic HUD, voice, search, memory, offline core. PWA + Android APK." />
+<meta name="twitter:image" content="https://itzruthik.github.io/Jarvis-ai/assets/og-image.png" />
+
+<link rel="icon" href="app/icons/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="app/icons/icon-192.png" />
+<link rel="stylesheet" href="website.css" />
+</head>
+<body data-state="idle">
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<header class="nav glass" id="nav">
+  <a class="nav__brand" href="#top">
+    <img src="app/icons/icon-192.png" alt="" width="30" height="30" />
+    <span>JARVIS<span class="dim"> AI</span></span>
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#features">Features</a>
+    <a href="#interface">Interface</a>
+    <a href="#stack">Stack</a>
+    <a href="#install">Install</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav__cta">
+    <a class="btn btn--ghost" href="https://github.com/itzRuthik/Jarvis-ai" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn btn--primary" href="app/index.html">Launch JARVIS</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- =============================== HERO =============================== -->
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> v1.1.0 · open source · in development</p>
+      <h1>JARVIS<span class="accent"> AI</span></h1>
+      <p class="tagline">“At Your Service. Always.”</p>
+      <p class="lede">
+        A futuristic personal AI assistant inspired by the advanced computer systems of science fiction.
+        Intelligent conversation, voice interaction, web search, smart tools, user-controlled memory and a
+        cinematic holographic interface — in one mobile-first application.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="app/index.html">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7L8 5Z"/></svg>
+          Launch the assistant
+        </a>
+        <a class="btn btn--ghost btn--lg" id="apkLink" href="https://github.com/itzRuthik/Jarvis-ai/releases/latest" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3v11.2l3.6-3.6 1.4 1.4L12 17l-5-5 1.4-1.4 3.6 3.6V3h0ZM5 19h14v2H5v-2Z"/></svg>
+          Download Android APK
+        </a>
+      </div>
+      <dl class="stats">
+        <div><dt>14</dt><dd>core capabilities</dd></div>
+        <div><dt>6</dt><dd>AI engines supported</dd></div>
+        <div><dt>0</dt><dd>keys in the repo</dd></div>
+        <div><dt>100%</dt><dd>offline shell</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__art">
+      <div class="phone">
+        <div class="phone__notch" aria-hidden="true"></div>
+        <div class="phone__screen" id="phoneScreen">
+          <div class="mini">
+            <div class="mini__bar">
+              <span class="mini__logo" aria-hidden="true"></span>
+              <span class="mini__title">JARVIS AI</span>
+              <span class="mini__chips">
+                <i class="ok" title="online"></i><i class="ok" title="local core"></i><i class="warn" title="standby"></i>
+              </span>
+            </div>
+            <div class="mini__core">
+              <div class="mini__ring r1"></div>
+              <div class="mini__ring r2"></div>
+              <div class="mini__ring r3"></div>
+              <div class="mini__nucleus"></div>
+            </div>
+            <div class="mini__log">
+              <p><b>OPERATOR</b> jarvis, what can you do?</p>
+              <p><b class="ai">JARVIS</b> Eleven offline capabilities, sir — maths, conversions, notes, tasks, memory, timers, hashes, dice, passwords, reports and system diagnostics. Connect an engine in Setup for open conversation.</p>
+            </div>
+            <div class="mini__bar mini__composer">
+              <span class="mini__input">Speak or type a command…</span>
+              <span class="mini__mic" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__halo" aria-hidden="true"></div>
+      <p class="caption mono">LIVE PREVIEW · SELF-CONTAINED SHELL · NO CDN</p>
+    </div>
+  </section>
+
+  <!-- ============================ HIGHLIGHTS ============================ -->
+  <section class="band">
+    <div class="band__inner">
+      <p><strong>At Your Service. Always.</strong> — the assistant stays useful when the network does not.</p>
+      <ul class="marquee mono">
+        <li>Holographic HUD</li><li>Animated AI core</li><li>Voice in &amp; out</li><li>Wake word</li>
+        <li>Web search</li><li>Smart memory</li><li>Calculator</li><li>Notes</li><li>Tasks</li>
+        <li>Image analysis</li><li>Document analysis</li><li>Code help</li><li>Offline mode</li><li>PWA</li><li>Android APK</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================= FEATURES ============================= -->
+  <section id="features" class="section">
+    <header class="section__head">
+      <p class="eyebrow">Key features</p>
+      <h2>Everything the HUD promised — implemented, honest, and labelled</h2>
+      <p class="section__lede">
+        Feature availability depends on implementation, browser support, permissions and the external services you configure.
+        Each card below states exactly what works out of the box and what needs a provider.
+      </p>
+    </header>
+
+    <div class="cards" id="featureCards"></div>
+  </section>
+
+  <!-- ============================ INTERFACE ============================ -->
+  <section id="interface" class="section section--split">
+    <div class="split__copy">
+      <p class="eyebrow">Design philosophy</p>
+      <h2>A cinematic interface, built from scratch</h2>
+      <p>
+        Deep black and navy backgrounds, electric blue and cyan holographic effects, an animated circular AI core,
+        glowing interface elements, real-time voice visualisation, futuristic status panels and smooth animation —
+        rendered entirely with CSS and a single Canvas, at 60 fps on a phone.
+      </p>
+      <ul class="ticks">
+        <li>Animated arc reactor with scanner sweep, particles and waveform reactivity</li>
+        <li>Live telemetry: mode, model, latency, turns, memory, battery, frame rate</li>
+        <li>Mobile-first layout with a desktop mission-control grid</li>
+        <li>Four accent palettes, reduced-motion support and full keyboard control</li>
+        <li>Offline-capable app shell — install once, open anywhere</li>
+      </ul>
+      <p class="disclaimer">
+        JARVIS AI is an original interface inspired by science-fiction aesthetics. It is not an official Iron Man
+        or Marvel product and is not affiliated with, endorsed by or derived from those properties.
+      </p>
+    </div>
+    <div class="split__art">
+      <div class="mock glass">
+        <div class="mock__head mono">
+          <span>SYSTEM STATUS</span><span class="dot-live">●</span><span>ALL NOMINAL</span>
+        </div>
+        <div class="mock__grid">
+          <div><span>ENGINE</span><b id="mockEngine">LOCAL CORE</b></div>
+          <div><span>MODEL</span><b>rule-core</b></div>
+          <div><span>LATENCY</span><b>12 ms</b></div>
+          <div><span>MEMORY</span><b id="mockMemory">3 facts</b></div>
+          <div><span>VOICE</span><b>READY</b></div>
+          <div><span>NETWORK</span><b id="mockNet">ONLINE</b></div>
+        </div>
+        <div class="mock__wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <pre class="mock__console mono" id="mockConsole">> reactor ......... ONLINE
+&gt; holographic HUD . CALIBRATED
+&gt; local core ...... ARMED
+&gt; memory bank ..... MOUNTED
+&gt; At Your Service. Always.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== STACK ============================== -->
+  <section id="stack" class="section">
+    <header class="section__head">
+      <p class="eyebrow">Technology stack</p>
+      <h2>Zero dependencies in the app. Nothing to install to run it.</h2>
+      <p class="section__lede">
+        The interface is plain HTML5, CSS3 and ES modules, so the same code runs in a browser, as an installed PWA
+        and inside an Android WebView via Capacitor. The optional Node proxy is the only server-side piece, and only
+        if you deploy it.
+      </p>
+    </header>
+    <div class="stack">
+      <article class="stack__col">
+        <h3>Application</h3>
+        <ul>
+          <li><b>HTML5</b> — semantic, accessible structure</li>
+          <li><b>CSS3</b> — HUD styling, animation, responsive grid</li>
+          <li><b>JavaScript ES modules</b> — 12 modules, no build step</li>
+          <li><b>Canvas 2D</b> — the animated AI core</li>
+          <li><b>Service worker</b> — offline shell + PWA</li>
+          <li><b>Web Storage</b> — memory, notes, tasks, transcript</li>
+        </ul>
+      </article>
+      <article class="stack__col">
+        <h3>Intelligence</h3>
+        <ul>
+          <li><b>OpenAI</b>, <b>Groq</b>, <b>OpenRouter</b> — OpenAI-compatible wire protocol</li>
+          <li><b>Google Gemini</b> — generateContent streaming</li>
+          <li><b>Anthropic Claude</b> — messages streaming</li>
+          <li><b>Custom proxy</b> — your own OpenAI-compatible endpoint</li>
+          <li><b>Local Core</b> — offline rule/tool engine, always available</li>
+          <li><b>Search</b> — Wikipedia, Tavily, Brave, Serper</li>
+        </ul>
+      </article>
+      <article class="stack__col">
+        <h3>Delivery</h3>
+        <ul>
+          <li><b>GitHub Pages</b> — this website and the web app</li>
+          <li><b>GitHub Actions</b> — tests, build verification, APK builds</li>
+          <li><b>Capacitor</b> — Android packaging</li>
+          <li><b>Node.js</b> — optional key-hiding proxy in <code>server/</code></li>
+          <li><b>PWA</b> — installable on Android and desktop</li>
+          <li><b>Releases</b> — signed-by-CI debug APK download</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================= INSTALL ============================= -->
+  <section id="install" class="section">
+    <header class="section__head">
+      <p class="eyebrow">Installation</p>
+      <h2>Three ways to get JARVIS running</h2>
+    </header>
+    <div class="install">
+      <article class="install__card glass">
+        <span class="badge">Easiest</span>
+        <h3>1 · Open it right now</h3>
+        <p>No install, no account, no build step. The app shell is self-contained and the offline Local Core is armed immediately.</p>
+        <a class="btn btn--primary" href="app/index.html">Launch JARVIS AI →</a>
+        <pre class="code mono">No API key? Everything local still works:
+maths · conversions · notes · tasks
+memory · timers · hashes · diagnostics</pre>
+      </article>
+
+      <article class="install__card glass">
+        <span class="badge">Recommended</span>
+        <h3>2 · Install as an app (PWA)</h3>
+        <p>Add JARVIS to your home screen for fullscreen launch, offline shell and app-style behaviour.</p>
+        <pre class="code mono">Chrome / Edge (Android or desktop)
+1. Open the app
+2. Menu → “Install app” / “Add to Home screen”
+3. Launch from the icon — no browser bars</pre>
+        <p class="muted">Microphone and speech recognition require HTTPS, which GitHub Pages provides.</p>
+      </article>
+
+      <article class="install__card glass">
+        <span class="badge">Android</span>
+        <h3>3 · Install the APK</h3>
+        <p>Every push to <code>main</code> builds an Android APK in GitHub Actions and attaches it to a release.</p>
+        <a class="btn btn--primary" id="apkLink2" href="https://github.com/itzRuthik/Jarvis-ai/releases/latest" target="_blank" rel="noopener">Download latest APK →</a>
+        <pre class="code mono">adb install jarvis-ai.apk
+# or build it yourself
+git clone https://github.com/itzRuthik/Jarvis-ai.git
+cd Jarvis-ai/android &amp;&amp; ./gradlew assembleDebug</pre>
+      </article>
+    </div>
+
+    <div class="quickstart glass">
+      <div>
+        <h3>Run from source</h3>
+        <pre class="code mono">git clone https://github.com/itzRuthik/Jarvis-ai.git
+cd Jarvis-ai
+node tools/serve.mjs        # http://localhost:5173
+open http://localhost:5173/app/</pre>
+      </div>
+      <div>
+        <h3>Optional: hide the API key on a server</h3>
+        <pre class="code mono">cd server
+npm install
+cp .env.example .env        # add your key
+npm start                   # http://localhost:8787
+# then in the app: Setup → Custom → base URL
+# http://localhost:8787/v1</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SECURITY ============================== -->
+  <section id="security" class="section section--split reverse">
+    <div class="split__copy">
+      <p class="eyebrow">Environment &amp; security</p>
+      <h2>Your keys never touch this repository</h2>
+      <p>
+        JARVIS is built around a bring-your-own-key model. That has real consequences, and the project documents them
+        instead of hiding them.
+      </p>
+      <ul class="ticks">
+        <li><b>Never committed</b> — keys live in browser storage on your device, or in <code>server/.env</code> which is git-ignored</li>
+        <li><b>Never bundled</b> — the front end ships with no credentials of any kind</li>
+        <li><b>Server proxy option</b> — the recommended setup for public deployments, with CORS allowlisting, rate limiting and Google Safe Browsing pre-checks</li>
+        <li><b>Session-only mode</b> — keep the key in memory so it disappears when you close the tab</li>
+        <li><b>Data control</b> — export a full backup, clear the transcript, or wipe everything with one button</li>
+        <li><b>Input validation</b> — no <code>eval</code>, no unsanitised HTML, a strict Content-Security-Policy</li>
+      </ul>
+      <p class="warn">
+        <b>Understand this before you paste a key:</b> a direct browser → provider call exposes that key to anyone using
+        the browser profile. Use a disposable key with a low spend limit, or run the proxy.
+      </p>
+    </div>
+    <div class="split__art">
+      <pre class="code code--panel mono"># .env.example  (never commit .env)
+PORT=8787
+AI_PROVIDER=openai        # or gemini / anthropic
+OPENAI_API_KEY=sk-...     # server-side only
+OPENAI_MODEL=gpt-4o-mini
+ALLOWED_ORIGINS=https://itzruthik.github.io
+RATE_LIMIT_PER_MIN=30
+GOOGLE_SAFETY_KEY=        # optional
+PROXY_TOKEN=              # optional shared secret
+# The browser only ever talks to this server.</pre>
+    </div>
+  </section>
+
+  <!-- ============================= ROADMAP ============================= -->
+  <section id="roadmap" class="section">
+    <header class="section__head">
+      <p class="eyebrow">Development roadmap</p>
+      <h2>What is done, and what is next</h2>
+      <p class="section__lede">Items are marked complete only after the functionality is implemented and verified.</p>
+    </header>
+    <ol class="roadmap" id="roadmapList"></ol>
+  </section>
+
+  <!-- =============================== FAQ =============================== -->
+  <section id="faq" class="section">
+    <header class="section__head">
+      <p class="eyebrow">Questions</p>
+      <h2>Straight answers</h2>
+    </header>
+    <div class="faq" id="faqList"></div>
+  </section>
+
+  <!-- ============================== FINAL CTA ============================== -->
+  <section class="cta">
+    <div class="cta__core" aria-hidden="true">
+      <div class="mini__ring r1"></div><div class="mini__ring r2"></div><div class="mini__ring r3"></div>
+      <div class="mini__nucleus"></div>
+    </div>
+    <h2>Your Personal AI. Your Mission Control.</h2>
+    <p>Build a personal assistant that feels like a futuristic mission-control system: intelligent, responsive, visually immersive and useful in everyday life.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="app/index.html">Launch JARVIS AI</a>
+      <a class="btn btn--ghost btn--lg" href="https://github.com/itzRuthik/Jarvis-ai" target="_blank" rel="noopener">Star on GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__cols">
+    <div>
+      <p class="footer__brand">JARVIS<span class="dim"> AI</span></p>
+      <p class="muted">At Your Service. Always.</p>
+      <p class="muted tiny">Status: In Development 🚧</p>
+    </div>
+    <div>
+      <h4>Project</h4>
+      <ul>
+        <li><a href="app/index.html">Web app</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/releases/latest" target="_blank" rel="noopener">Releases / APK</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai" target="_blank" rel="noopener">Source code</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/issues" target="_blank" rel="noopener">Report an issue</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Documentation</h4>
+      <ul>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/blob/main/README.md" target="_blank" rel="noopener">README</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/blob/main/docs/ANDROID.md" target="_blank" rel="noopener">Android &amp; APK</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/blob/main/docs/DEPLOYMENT.md" target="_blank" rel="noopener">Deployment</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/blob/main/docs/SECURITY.md" target="_blank" rel="noopener">Security &amp; privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a></li>
+        <li><a href="https://github.com/itzRuthik/Jarvis-ai/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code of conduct</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer__legal muted tiny">
+    JARVIS AI is an independent, fan-made project inspired by science-fiction aesthetics. Not affiliated with, endorsed by
+    or derived from Marvel, Iron Man or any related rights holder. “JARVIS” here refers only to this open-source assistant.
+    Choose and verify an appropriate open-source licence before distributing or reusing this project.
+  </p>
+</footer>
+
+<script type="module" src="website.js"></script>
+</body>
+</html>

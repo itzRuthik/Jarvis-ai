@@ -1,0 +1,6 @@
+# JARVIS AI
+User-agent: *
+Allow: /
+Disallow: /capacitor/
+
+Sitemap: https://itzruthik.github.io/Jarvis-ai/sitemap.xml

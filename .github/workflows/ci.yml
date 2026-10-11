@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Verify app shell & run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dev tooling
+        run: npm ci
+
+      - name: Static integrity check (modules, assets, service worker, manifest)
+        run: node tools/verify-shell.mjs
+
+      - name: Test suite
+        run: node tools/test.mjs
+
+      - name: Boot the HUD in a simulated DOM
+        run: node tools/smoke-dom.mjs
+
+      - name: Print summary
+        if: always()
+        run: |
+          {
+            echo "### JARVIS AI CI"
+            echo ""
+            echo "- shell verification: \`node tools/verify-shell.mjs\`"
+            echo "- unit & integration tests: \`node tools/test.mjs\`"
+            echo "- DOM smoke test (jsdom): \`node tools/smoke-dom.mjs\`"
+            echo "- node: $(node --version)"
+          } >> "$GITHUB_STEP_SUMMARY"
