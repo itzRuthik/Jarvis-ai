@@ -1,0 +1,19 @@
+{
+  "name": "jarvis-ai-server",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Optional JARVIS AI streaming proxy — keeps AI provider keys on the server instead of in the browser.",
+  "type": "module",
+  "main": "index.mjs",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "start": "node index.mjs",
+    "dev": "node --watch index.mjs",
+    "smoke": "node --test test/"
+  },
+  "keywords": ["jarvis", "ai", "proxy", "openai", "gemini", "anthropic"],
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,27 @@
+{
+  "name": "jarvis-ai-android",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Capacitor shell that wraps the JARVIS AI web app into an Android APK.",
+  "type": "module",
+  "scripts": {
+    "prepare:www": "node scripts/prepare-www.mjs",
+    "android:add": "npm run prepare:www && cap add android",
+    "sync": "npm run prepare:www && cap sync android",
+    "open": "cap open android",
+    "build:debug": "npm run sync && cd android && ./gradlew assembleDebug",
+    "build:release": "npm run sync && cd android && ./gradlew bundleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/app": "^6.0.2",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/haptics": "^6.0.2",
+    "@capacitor/keyboard": "^6.0.3",
+    "@capacitor/splash-screen": "^6.0.3",
+    "@capacitor/status-bar": "^6.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  }
+}
