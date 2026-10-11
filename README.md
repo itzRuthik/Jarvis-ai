@@ -307,6 +307,7 @@ Full details, permissions and known platform limitations: **[docs/ANDROID.md](do
 | Piece | Where | Notes |
 | --- | --- | --- |
 | Website + web app | **GitHub Pages** | repo root (`index.html`) + `app/`; workflow in `.github/workflows/pages.yml` |
+| — setup | **Settings → Pages → Source: GitHub Actions** | one click, once: Pages cannot be enabled by a workflow (API restriction) |
 | AI keys | **your device** or **your proxy** | never in the repo |
 | Optional proxy | any Node host (Render, Fly, Railway, VPS) | same-origin streaming, rate limited |
 | Android | GitHub Releases | CI-built debug APK |
