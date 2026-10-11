@@ -23,42 +23,65 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # The site already lives at the repository root (index.html, website.css,
-  # website.js, assets/) with the web app in app/, so publishing is a copy.
-  # This job exists so deployment is deterministic and can run without
-  # changing anything in the repository settings.
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pages_ready: ${{ steps.preflight.outputs.pages_ready }}
     steps:
       - uses: actions/checkout@v5
 
+      # The site already lives at the repository root (index.html, website.css,
+      # website.js, assets/) with the web app in app/, so publishing is a copy.
       - name: Assemble the site
         run: |
           set -euo pipefail
           rm -rf _site && mkdir -p _site
-          cp index.html 404.html website.css website.js _site/
+          cp index.html 404.html website.css website.js robots.txt sitemap.xml _site/
           cp -r assets _site/assets
           cp -r app _site/app
-          # Drop anything that should never be published
-          rm -f _site/app/robots.txt 2>/dev/null || true
           find _site -name '*.map' -delete 2>/dev/null || true
           node tools/verify-shell.mjs
           du -sh _site
-          find _site -maxdepth 2 | sort | head -30
+          find _site -maxdepth 1 | sort
 
-      # enablement: attempt to switch the repository's Pages source to
-      # "GitHub Actions" automatically. If the token is not permitted to do that,
-      # enable it once by hand: Settings → Pages → Source: GitHub Actions.
+      - name: Check whether GitHub Pages is enabled
+        id: preflight
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh api "repos/${{ github.repository }}/pages" >/dev/null 2>&1; then
+            echo "pages_ready=true" >> "$GITHUB_OUTPUT"
+            echo "✓ GitHub Pages is enabled — deploying."
+          else
+            echo "pages_ready=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "### ⚠ GitHub Pages is not enabled yet"
+              echo ""
+              echo "The site artefacts are built and ready. To publish them, enable Pages **once**:"
+              echo ""
+              echo "1. Open <https://github.com/${{ github.repository }}/settings/pages>"
+              echo "2. **Build and deployment → Source: GitHub Actions**"
+              echo "3. Re-run this workflow (or push again) — nothing else is required."
+              echo ""
+              echo "Expected URLs once enabled:"
+              echo ""
+              echo "- website → https://$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]').github.io/${GITHUB_REPOSITORY#*/}/"
+              echo "- app → https://$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]').github.io/${GITHUB_REPOSITORY#*/}/app/"
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning title=Enable GitHub Pages::Settings → Pages → Source: GitHub Actions (one click). This workflow then deploys automatically."
+          fi
+
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
+        if: steps.preflight.outputs.pages_ready == 'true'
 
       - uses: actions/upload-pages-artifact@v3
+        if: steps.preflight.outputs.pages_ready == 'true'
         with:
           path: _site
 
   deploy:
     needs: build
+    if: needs.build.outputs.pages_ready == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

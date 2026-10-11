@@ -22,7 +22,17 @@ no branch shuffle:
 /404.html               → styled not-found page
 ```
 
-### Enable it
+> ### ⚠️ One click is required, once
+>
+> GitHub Pages must be enabled by the repository owner before anything can be published —
+> no workflow can do it for you (the API rejects it without owner permission).
+>
+> **[Open Settings → Pages](https://github.com/itzRuthik/Jarvis-ai/settings/pages)** and set
+> **Build and deployment → Source: `GitHub Actions`**. That is the only manual step.
+> The `Deploy website to GitHub Pages` workflow then publishes automatically on every push
+> to `main`, and it prints a reminder in its summary until the setting exists.
+
+### Enable it (branch mode — also works)
 
 **Settings → Pages → Build and deployment → Source: _Deploy from a branch_ → Branch: `main` / (root) → Save.**
 
