@@ -30,7 +30,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Assemble the site
         run: |
@@ -46,7 +46,12 @@ jobs:
           du -sh _site
           find _site -maxdepth 2 | sort | head -30
 
+      # enablement: attempt to switch the repository's Pages source to
+      # "GitHub Actions" automatically. If the token is not permitted to do that,
+      # enable it once by hand: Settings → Pages → Source: GitHub Actions.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
