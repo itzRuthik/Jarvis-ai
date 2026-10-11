@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "node tools/serve.mjs",
+    "dev": "node tools/serve.mjs",
     "test": "node tools/test.mjs",
     "verify": "node tools/verify-shell.mjs",
     "smoke": "node tools/smoke-dom.mjs",

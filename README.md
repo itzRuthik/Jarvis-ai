@@ -213,10 +213,14 @@ python3 -m http.server 5173
 ```bash
 git clone https://github.com/itzRuthik/Jarvis-ai.git
 cd Jarvis-ai
-node tools/serve.mjs          # zero dependencies, Node 18.17+
+npm run dev                   # = node tools/serve.mjs — zero dependencies, Node 18.17+
 # website → http://localhost:5173/
 # web app → http://localhost:5173/app/
 ```
+
+> There is **no `npm install` and no build step**. The app is plain ES modules, so the test
+> above needs nothing but Node. Install dev tooling (`npm install`, jsdom only) if you also
+> want the optional DOM smoke test.
 
 ### Option C — install as an app (PWA)
 
